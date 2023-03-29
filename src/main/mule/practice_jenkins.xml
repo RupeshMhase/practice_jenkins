@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="267447c1-3de1-4526-a186-7736fdab95a0" >
+		<http:listener-connection host="0.0.0.0" port="8033" />
+	</http:listener-config>
+	<flow name="practice_jenkinsFlow" doc:id="2451934d-00a9-4aee-9bd5-0d5fa21b7983" >
+		<http:listener doc:name="HTTP:8033/practice_jenkins" doc:id="0a3b2faf-6e4b-447f-abe8-36dda367af24" config-ref="HTTP_Listener_config" path="/practice_jenkins"/>
+		<set-payload value='#["Practice jenkins flow"]' doc:name='"Practice jenkins flow"' doc:id="9a79be36-0cf3-41c4-bef8-4645fcbe9299" />
+		<logger level="INFO" doc:name="Logger" doc:id="119658f8-b155-4c28-9f43-427f00507bc2" message="#[payload]"/>
+	</flow>
+</mule>
