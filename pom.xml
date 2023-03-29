@@ -42,9 +42,6 @@
 						<workerType>${vCore}</workerType>
 						<workers>${workers}</workers>
 						<objectStoreV2>true</objectStoreV2>
-						<properties>
-                            <key>value</key>
-                        </properties>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
